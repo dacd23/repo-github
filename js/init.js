@@ -40,8 +40,16 @@ var getJSONData = function(url){
     });
 }
 
+
+
+
+/*Here we are displaying the username on the index.html website by retrieving the value from the localStorage 10/02/2020  */
+
+
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+  
 });

@@ -39,11 +39,31 @@
 
 <body class="text-center">
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 16/08/2020) -> Punto 3 y 4.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div class="alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
+      <form action="file:///C:/Users/lainz/OneDrive/Documents/jap/repo-github/index.html" method="POST">
+        <div class="imgcontainer">
+          <img style="opacity: 0.8" src="https://avatars1.githubusercontent.com/u/51379106?s=400&u=06cd8ed563c49e984d7b24cf9aad9b68c437ab1c&v=4" alt="Avatar" class="avatar">
+        </div>
+      
+        <div class="container">
+          <form method="POST" action="index.html">
+          <label for="userValue"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="userValue" id="userValue" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+          <input type="submit" id="sbmit" value="Login" onclick="displayInfo()">
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+          </form>
+        </div>
+        
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
     </div>
   </div>
 

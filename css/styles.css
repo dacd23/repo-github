@@ -139,3 +139,132 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+/* Login Styles */
+
+.alert-danger {
+  display: absolute;
+  position: bottom;
+  justify-content: center;  
+}
+
+/*Adding styles to the product list -09/30/2020-*/
+
+li {
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+/*Adding style to the category-info 10/02/2020*/
+
+.comment {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+ 
+}
+
+.comments {
+  display: flex;
+  justify-content: center;
+  padding: 15px 10px;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  font-family: sans-serif;
+  border: 2px solid black;
+  width: 600px;
+}
+
+textarea {
+  height: 60px;
+  width: 90%;
+  border: none;
+  border-bottom: 2px solid #aaa;
+  margin-bottom: 10px;
+}
+
+.comments:hover {
+  color: rgba(255, 0, 0, 0.884);
+}
+
+input {
+  padding: 10px 15px;
+  background-color: purple;
+  color: white;
+  border-bottom: black;
+}
+
+#name {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  padding: 10px 10px;
+  margin: 10px 20px;
+  background-color: purple;
+  color: white;
+  border-bottom: black;
+}
+
+/*Adding styles to the comments from the JSON*/
+
+.cheek {
+  
+  justify-content: left;
+  align-items: left;
+  padding: 5px 5px;
+  margin: 5px 8px;
+  border: solid black 0.5px;
+};
+
+.cheeek {
+  
+  align-items: left;
+  width: 100%;
+  padding: 0.5px 1px;
+
+   
+};
+
+/*Adding style to the form of payment and the shipping method*/
+
+#metodo-de-envio {
+  display: flex;
+  position: left;
+  align-items: left;
+  background-color: rgb(192, 61, 192);
+  border: 1px solid yellow;
+  color: white;
+  margin: 4px 10px;
+  padding: 4px 10px;
+}
+
+.metodo-de-pago {
+  display: flex;
+  position: left;
+  background-color: rgb(131, 46, 131);
+  border: 1px solid yellow;
+  color: white;
+  margin: 4px 10px;
+  padding: 4px 10px;
+}
+
+.proceedToCheckout {
+  display: flex;
+  position: center;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(95, 3, 95);
+  color: white;
+  margin: 10px 100px;
+  padding: 10px 50px;
+  border: 1px solid yellow;
+}
+
+.button-confirm-payment {
+  padding-left: 10px;
+  margin-left: 50px;
+}
