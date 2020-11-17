@@ -38,32 +38,27 @@
 </head>
 
 <body class="text-center">
-  <div class="container p-5">
-    <div class="alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
+  <div class="container  col-4 flex">
+    <div class="alert-danger" role="alert">
       <form action="file:///C:/Users/lainz/OneDrive/Documents/jap/repo-github/index.html" method="POST">
-        <div class="imgcontainer">
+        <div class="imgcontainer col-4 flex">
           <img style="opacity: 0.8" src="https://avatars1.githubusercontent.com/u/51379106?s=400&u=06cd8ed563c49e984d7b24cf9aad9b68c437ab1c&v=4" alt="Avatar" class="avatar">
         </div>
-      
-        <div class="container">
+        <div class="container  col-4 flex-align-left">
           <form method="POST" action="index.html">
-          <label for="userValue"><b>Username</b></label>
+          <label for="userValue"><b>Usuario</b></label>
           <input type="text" placeholder="Enter Username" name="userValue" id="userValue" required>
-      
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" id="password" required>
-          <input type="submit" id="sbmit" value="Login" onclick="displayInfo()">
+          <label for="psw"><b>Contraseña</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" id="password" required><br><br>
+          <input type="submit" id="sbmit" value="Ingresar" onclick="displayInfo()">
           <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
-          </form>
+            <input type="checkbox" checked="checked" name="remember"> Recordarme
+          </label>  
+          <button type="button" class="cancelbtn">Cancelar</button><br>
+          <span class="psw"><a href="#">Olvido su contraseña?</a></span>
         </div>
-        
-        <div class="container" style="background-color:#f1f1f1">
-          <button type="button" class="cancelbtn">Cancel</button>
-          <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 

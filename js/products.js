@@ -30,13 +30,13 @@ function sortCategories(criteria, array){
             if ( a.name > b.name ){ return -1; }
             if ( a.name < b.name ){ return 1; }
             return 0;
-        });
+        }); /*Aqui estaba soldcount para filtrar por cantidad y pones productcount*/
     }else if (criteria === ORDER_BY_PROD_COUNT){
         result = array.sort(function(a, b) {
-            let aCount = parseInt(a.productCount);
-            let bCount = parseInt(b.productCount);
+            let aCount = parseInt(a.cost);
+            let bCount = parseInt(b.cost);
 
-            if ( aCount > bCount ){ return -1; }
+            if ( aCount > bCount ){ return -1; } 
             if ( aCount < bCount ){ return 1; }
             return 0;
         });
@@ -51,10 +51,27 @@ function showCategoriesList(){
     for(let i = 0; i < currentCategoriesArray.length; i++){
         let category = currentCategoriesArray[i];
 
-        if (((minCount == undefined) || (minCount != undefined && parseInt(category.productCount) >= minCount)) &&
-            ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){
+        if (((minCount == undefined) || (minCount != undefined && parseInt(category.cost) >= minCount)) && //aqui category.cost deberia se productCount
+            ((maxCount == undefined) || (maxCount != undefined && parseInt(category.cost) <= maxCount))){
+/*Agregando productos en cuadrilla*/
 
-            htmlContentToAppend += `
+                htmlContentToAppend += `
+
+<div class="col-md-4" my-6>
+    <div class="card h-100">
+    <img src="` + category.imgSrc + `" alt="` + category.description + `" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title"><a href="category-info.html">`+ category.name +`</a></h5>
+            <p class="card-text">` + category.description + `</p>
+            <p class="card-text"><small class="text-muted">` + category.cost + `</small></p>
+            <p class="card-text"><small class="text-muted"> artículos vendidos ` + category.soldCount + `</small></p>
+        </div>
+    </div>
+</div>
+
+`
+
+/*            htmlContentToAppend += `
             <a href="category-info.html" class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
@@ -70,7 +87,7 @@ function showCategoriesList(){
                     </div>
                 </div>
             </a>
-            `
+            `  */
         }
 
         document.getElementById("parola").innerHTML = htmlContentToAppend;

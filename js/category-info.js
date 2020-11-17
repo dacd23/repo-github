@@ -1,5 +1,7 @@
 var category = {};
 var erray = {};
+var currentCategoriesArray = []; //var used in the JSON function
+var categori = {};
 
 function showImagesGallery(array){
 
@@ -29,19 +31,19 @@ function showComments(erray){
         let Arrray = erray[i];
 
         htmlContentToAppend += `
-        <div class="cheek">
+        <div class="list-group-item list-group-item-action">
             <div >
-                <p class="cheeek">User: ` + Arrray.user + `</p>
+                <p >User: ` + Arrray.user + `</p>
             </div>
             <div >
-            <p class="cheeek">Date Time: ` + Arrray.dateTime + `</p>
-        </div>
-        <div >
-        <p class="cheeeck">Score: ` + Arrray.score + `</p>
-    </div>
-    <div >
-    <p class="cheeeck">Description: ` + Arrray.description + `</p>
-</div>
+                <p>Date Time: ` + Arrray.dateTime + `</p>
+            </div>
+            <div >
+                <p >Score: ` + Arrray.score + `</p>
+            </div>
+            <div >
+                <p>Description: ` + Arrray.description + `</p>
+            </div>
         </div>
         `
 
@@ -53,6 +55,87 @@ function showComments(erray){
 
 
 /*My attempt to render the previous comments on the screen ends here*/
+
+
+
+/*my attempt to render the related products starts here - 10/15/2020 - */
+
+function showRelatedProducts(categori){
+
+    let htmlContentToAppend = "";
+
+    for(let i = 0; i < categori.length; i++){
+        let showTime = categori[i];
+
+        htmlContentToAppend += `
+        <div class="row">
+                <div class="col">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">`+ showTime.name +`</h4>
+                            <small class="text-muted">` + showTime.soldCount + `</small>
+                        </div>
+                    <div class="col-3">
+                        <p class="mb-1">` + showTime.description + `</p>
+                        <p class="mb-1">` + showTime.currency + `<span> ` + showTime.cost + `</span></p>
+                        <p class="mb-1">` + showTime.category + `</p>
+                    </div>
+                    <div class="col-3">
+                        <img src="` + showTime.images[0] + `" alt="` + showTime.description + `" class="img-thumbnail">
+                    </div>
+                    <div class="col-3">
+                        <img src="` + showTime.images[1] + `" alt="` + showTime.description + `" class="img-thumbnail">
+                    </div>
+                    <div class="col-3">
+                        <img src="` + showTime.images[2] + `" alt="` + showTime.description + `" class="img-thumbnail">
+                    </div>
+                    <div class="col-3">
+                        <img src="` + showTime.images[3] + `" alt="` + showTime.description + `" class="img-thumbnail">
+                    </div>
+                    <div class="col-3">
+                        <img src="` + showTime.images[4] + `" alt="` + showTime.description + `" class="img-thumbnail">
+                    </div>
+                </div>    
+                    <br>
+                <div class="col-3">
+                    <img src="` + showTime.relatedProducts[0] + `>
+                </div>
+                <div class="col-3">
+                    <img src="` + showTime.relatedProducts[1] + `>
+                </div>
+        </div>        
+         `
+         
+         
+
+    }
+    document.getElementById("related").innerHTML = htmlContentToAppend;
+}
+
+
+
+// my attempt to render the related products ends here - 10/15/2020
+
+
+//Here it ends my attempt to render related products - 11/07/2020
+/*Here we are calling the JSON for related products - 10/15/2020 -*/
+
+document.addEventListener("DOMContentLoaded", function(e){
+    getJSONData(PRODUCT_INFO_URL).then(function(resultObj){
+        if (resultObj.status === "ok"){
+            categori = resultObj.data;
+            //Showing relatedproducts
+            console.log(categori);
+            showRelatedProducts(categori);
+        }
+        
+    })
+
+});
+
+//the function calling the JSON ends here - 10/15/2020 - 
+
+
+
 
 
 /*Here I create a function to post the comment on the category-info.html page. First, I created a variable to get the textarea input text. */

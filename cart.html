@@ -34,6 +34,7 @@
 </head>
 
 <body>
+  <!--navigation section-->
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
@@ -41,6 +42,16 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="py-2 d-none d-md-inline-block" href="my-profile.html" id="item">gg</a>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a id="Item" class="dropdown-item" href="my-profile.html">Usuario</a>
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" href="#">Cerrar Sesion</a>
+        </div>
+      </div>
     </div>
   </nav>
   <div class="container p-5">
@@ -48,31 +59,129 @@
       <hr>
       <p>SubTotal: <spam id="subPrice"></spam></p>
       </div><br>
-      <div id="metodo-de-envio">
-        <p>Elige tu Metodo de envio:</p>
+<div class="container">      
+<div id="metodo-de-pago">
+       <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  <h5><em>Elige tu metodo de pago</em></h5>
+</button>
+
+<!-- Modal for the payment method section -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Elige tu metodo de pago</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
         <form action="cart.html">
-        <ul>
-          <li><label for="free">Envio Gratis, demora de 7 a 10 dias</label> <input type="radio" name="shipping" value="free"> </li>
-          <li><label for="normal">Envio Regular, demora de 3 a 5 dias</label> <input type="radio" name="shipping" value="normal"></li>
-          <li><label for="fast">Envio Premium, demora 1 dia</label> <input type="radio" name="shipping" value="fast"></li>
-        </ul>
+          <p id="noPayment"> Elige tu Metodo de Pago:</p><br>
+          <ul>
+            <li><label for="creditcard">Tarjeta de Credito o Debito </label> <input type="radio" name="payment" value="creditcard" onclick="paymentMethodValidation()"></li>
+            <!--Adding the credit card fields-->
+            <div>
+              <form>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">name</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">Credit Card Number</label>
+                  <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                </div>
+              </form>
+            </div>
+            <li><label for="bankTransfer">Transferencia Bancaria </label> <input type="radio" name="payment" value="bankTransfer" onclick="paymentMethodValidation()"></li>
+            <!--Adding the bank account fields-->
+            <form>
+              <div class="form-group">
+                <label for="formGroupExampleInput">Account's name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Bank account</label>
+                <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+              </div>
+            </form>
+          </ul>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="paymentMethodValidation()">Confirmar Metodo de Pago</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+      </div><hr>
+<!-- Adding address input form-->
+      <div class="address">
+        <form>
+          <div class="form-group">
+            <label id="mainA" for="inputAddress">Direccion Principal: </label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Main St 4321" onblur="mainAddressValidation()" required>
+          </div>
+          <div class="form-group">
+            <label id="compleAddress" for="inputAddress2">Direccion Complementaria: </label>
+            <input required type="text" class="form-control" id="inputAddress2" placeholder="Apartment or house number" onblur="complementaryAddressValidation()" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label id="citi" for="inputCity">Ciudad: </label>
+              <input type="text" class="form-control" id="inputCity" onblur="cityValidation()" required>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputState" id="country-error">Pais: </label>
+              <select id="inputCountry" onclick="countryValidation(this.value)" class="form-control" required>
+                <option selected placeholder="Elige un pais"></option>
+                <option>Argentina</option>
+                <option>Brasil</option>
+                <option>Colombia</option>
+                <option>Chile</option>
+                <option>Uruguay</option>
+                <option>Otros...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputZip">Codigo Postal: </label>
+              <input type="text" class="form-control" id="inputZip" onchange="zipCodeValidation()" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Recordar direccion
+              </label>
+            </div>
+          <!-- </div> -->
+          <button id="addingAddress" type="button" class="btn btn-primary" onclick="deliveryMethodValidation()">Agrega tú direccion</button>
         </form>
       </div>
-      <div class="metodo-de-pago">
+      <hr>
+      <!--Delivery Method Section-->
+      <div class="metodo-de-envio">
         <form action="cart.html">
-        <p>Elige tu Metodo de Pago:</p><br>
+        <p> Elige tu Metodo de envio:</p><br>
         <ul>
-          <li><label for="Paypal">Paypal:</label> <input type="radio" name="payment" value="paypal"></li>
-          <li><label for="TarjetaDeCredito">Tarjeta de Credito: </label><input type="radio" name="payment" value="TarjetaDeCredito"></li>
-          <li><label for="TarjetaDeDebito">Tarjeta de Debito: </label><input type="radio" name="payment" value="TarjetaDeDebito"></li>
+          <li><label for="free">Envio Amigable, demora de 7 a 10 dias. (<strong>Valor:</strong> 5% del precio subtotal.)</label> <input type="radio" name="shipping" id="shipping1" value="5%" onclick="totalPrrice()" onclick="paymentMethodValidation()" ></li>
+          <li><label for="normal">Envio Regular, demora de 3 a 5 dias. (<strong>Valor:</strong> 7% del precio subtotal.)</label> <input type="radio" name="shipping" id="shipping2" value="7%" onclick="totalPrrice()" onclick="paymentMethodValidation()" ></li>
+          <li><label for="fast">Envio Premium, demora 1 dia. (<strong>Valor:</strong> 15% del precio subtotal.)</label> <input type="radio" name="shipping" id="shipping3" value="15%" onclick="totalPrrice()" onclick="paymentMethodValidation()" ></li> <!--onchange="paymentMethodValidation()"-->
         </ul>
+        <p><strong>Total a Pagar: <span id="totalAmount"></span></strong></p>
         </form>
       </div><hr>
       <div class="proceedToCheckout">
         <span for="proceedToCheckout">Confirmar Compra  </span>
-        <button onclick="msg()" value="proceedToCheckout" class="button-confirm-payment">Pagar</button>
+        <button onclick="msg(); purchaseValidation(); paymentMethodValidation(); addressValidation(); deliveryMethodValidation()" value="proceedToCheckout" class="button-confirm-payment">Pagar</button>
       </div>
   </div>
+</div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -81,6 +190,7 @@
       <div></div>
     </div>
   </div>
+  <script>document.getElementById("item").innerHTML = localStorage.getItem("userValue");</script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
@@ -89,3 +199,51 @@
 </body>
 
 </html>
+
+<!--function totalPrrice() {
+    var cheap = 5;
+    let normal = 7;
+    var expensive = 15;
+    var aPrice = document.getElementById("subPrice").innerHTML;
+    let optimusPrice = parseInt(aPrice);
+   // var Tprice = parseInt(aPrice);
+    if (cheap.checked) {
+        document.getElementById("totalAmount").innerHTML = ((cheap * optimusPrice) / 100) + optimusPrice;
+    } else if (normal.checked) {
+        document.getElementById("totalAmount").innerHTML = ((normal * optimusPrice) / 100) + optimusPrice;
+    } else if (expensive.checked) {
+        document.getElementById("totalAmount").innerHTML = ((expensive * optimusPrice) / 100) + optimusPrice;
+    } else {
+        document.getElementById("totalAmount").innerHTML = 'Don\'t forge ';
+    };
+
+
+};-->
+
+<!-- How to display a collapsable item 
+  
+  <div class="container">
+  <h2>Simple Collapsible</h2>
+  <input type="radio" onclick="desplegar()" name="desplegar"> desplegar</input><input type="radio" onclick="desplegar2()"  name="desplegar">desplegar2</input>
+  <div id="demo" class="collapse">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </div>
+   <div id="demo2" class="collapse">
+   asfasfasf
+  </div>
+  
+  
+  
+</div>
+<script>
+function desplegar(){
+$('#demo').collapse('show');
+$('#demo2').collapse('hide');
+}
+function desplegar2(){
+$('#demo').collapse('hide');
+$('#demo2').collapse('show');
+}
+</script>-->

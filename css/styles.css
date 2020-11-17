@@ -191,22 +191,15 @@ textarea {
   color: rgba(255, 0, 0, 0.884);
 }
 
-input {
-  padding: 10px 15px;
-  background-color: purple;
-  color: white;
-  border-bottom: black;
-}
-
 #name {
   display: flex;
   justify-content: left;
   align-items: left;
   padding: 10px 10px;
   margin: 10px 20px;
-  background-color: purple;
+  background-color: black;
   color: white;
-  border-bottom: black;
+  border-bottom: whitesmoke;
 }
 
 /*Adding styles to the comments from the JSON*/
@@ -231,21 +224,21 @@ input {
 
 /*Adding style to the form of payment and the shipping method*/
 
-#metodo-de-envio {
+#metodo-de-pago {
   display: flex;
-  position: left;
+  position: auto;
   align-items: left;
   background-color: rgb(192, 61, 192);
   border: 1px solid yellow;
   color: white;
-  margin: 4px 10px;
+  margin: 10px 10px;
   padding: 4px 10px;
 }
 
-.metodo-de-pago {
+.metodo-de-envio {
   display: flex;
   position: left;
-  background-color: rgb(131, 46, 131);
+  background-color: black;
   border: 1px solid yellow;
   color: white;
   margin: 4px 10px;
@@ -257,7 +250,7 @@ input {
   position: center;
   align-items: center;
   justify-content: center;
-  background-color: rgb(95, 3, 95);
+  background-color: black;
   color: white;
   margin: 10px 100px;
   padding: 10px 50px;
@@ -268,3 +261,10 @@ input {
   padding-left: 10px;
   margin-left: 50px;
 }
+
+.address {
+ margin-left: 20px;
+ margin-right: 20px;
+ 
+};
+
