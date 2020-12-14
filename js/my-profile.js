@@ -3,58 +3,9 @@
 //elementos HTML presentes.
 
 
-
-
-/*JSON object -->
-var userData = `[{
-    "name":"Pepe",
-    "lastname":"peperulo",
-    "age":null,
-    "email":null,
-    "phone number":null
-}]`;
-
-
-console.log(JSON.parse(userData));
-
-<!-- Storing the user's data -->
-let storeUserData = JSON.stringify(userData);
-localStorage.setItem("sudJSON", storeUserData);
-
-
-<!-- accessing the user's data -->
-let showUserData = localStorage.getItem("sudJSON");
-
-document.getElementById("uProfile").innerHTML = JSON.parse(showUserData); 
-
-*/
-
 document.addEventListener("DOMContentLoaded", function (e) {
 
-/*this code snippet was retrieved from bootsrap, it adds style to the website and authenticates the empty fields once 
-the button is clicked
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('click', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
 
-
-renderUserData();
-*/
 renderUserData();
 
 
@@ -143,7 +94,7 @@ function renderUserData() {
 
 const button = document.getElementById("button");
 
-//here we assigned the function to the button
+//here we assigned the function to the button triggering an onclick event
 
 button.onclick = renderUserData;
 

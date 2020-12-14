@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
-
+<!--head-->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -11,7 +11,7 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-
+<!--CSS Style-->
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -32,7 +32,7 @@
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
 </head>
-
+<!--body-->
 <body>
   <!--navigation section-->
   <nav class="site-header sticky-top py-1 bg-dark">
@@ -49,7 +49,7 @@
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a id="Item" class="dropdown-item" href="my-profile.html">Usuario</a>
           <a class="dropdown-item" href="cart.html">Mi carrito</a>
-          <a class="dropdown-item" href="#">Cerrar Sesion</a>
+          <a class="dropdown-item" href="login.html">Cerrar Sesion</a>
         </div>
       </div>
     </div>
@@ -57,11 +57,11 @@
   <div class="container p-5">
       <p id="bambini"></p>
       <hr>
-      <p>SubTotal: <spam id="subPrice"></spam></p>
+      <p><strong>SubTotal: </strong><spam id="subPrice"></spam></p>
       </div><br>
 <div class="container">      
 <div id="metodo-de-pago">
-       <!-- Button trigger modal -->
+       <!-- Button triggering modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   <h5><em>Elige tu metodo de pago</em></h5>
 </button>
@@ -86,11 +86,11 @@
             <div>
               <form>
                 <div class="form-group">
-                  <label for="formGroupExampleInput">name</label>
+                  <label for="formGroupExampleInput">Nombre</label>
                   <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
                 </div>
                 <div class="form-group">
-                  <label for="formGroupExampleInput2">Credit Card Number</label>
+                  <label for="formGroupExampleInput2">Tarjeta de Crédito</label>
                   <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
                 </div>
               </form>
@@ -99,11 +99,11 @@
             <!--Adding the bank account fields-->
             <form>
               <div class="form-group">
-                <label for="formGroupExampleInput">Account's name</label>
+                <label for="formGroupExampleInput">Nombre del Beneficiario de la cuenta</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
               </div>
               <div class="form-group">
-                <label for="formGroupExampleInput2">Bank account</label>
+                <label for="formGroupExampleInput2">Numero de Cuenta Bancaria</label>
                 <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
               </div>
             </form>
@@ -159,13 +159,13 @@
                 Recordar direccion
               </label>
             </div>
-          <!-- </div> -->
+          <!-- adding address button -->
           <button id="addingAddress" type="button" class="btn btn-primary" onclick="deliveryMethodValidation()">Agrega tú direccion</button>
         </form>
       </div>
       <hr>
       <!--Delivery Method Section-->
-      <div class="metodo-de-envio">
+      <div class="form-group">
         <form action="cart.html">
         <p> Elige tu Metodo de envio:</p><br>
         <ul>
@@ -175,10 +175,10 @@
         </ul>
         <p><strong>Total a Pagar: <span id="totalAmount"></span></strong></p>
         </form>
-      </div><hr>
+      </div><br><hr>
       <div class="proceedToCheckout">
         <span for="proceedToCheckout">Confirmar Compra  </span>
-        <button onclick="msg(); purchaseValidation(); paymentMethodValidation(); addressValidation(); deliveryMethodValidation()" value="proceedToCheckout" class="button-confirm-payment">Pagar</button>
+        <button onclick="msg(); purchaseValidation(); paymentMethodValidation(); addressValidation(); deliveryMethodValidation()" value="proceedToCheckout" class="button-confirm-payment btn-primary">Pagar</button>
       </div>
   </div>
 </div>
@@ -190,6 +190,7 @@
       <div></div>
     </div>
   </div>
+  <!--JavaScript links-->
   <script>document.getElementById("item").innerHTML = localStorage.getItem("userValue");</script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
@@ -199,51 +200,3 @@
 </body>
 
 </html>
-
-<!--function totalPrrice() {
-    var cheap = 5;
-    let normal = 7;
-    var expensive = 15;
-    var aPrice = document.getElementById("subPrice").innerHTML;
-    let optimusPrice = parseInt(aPrice);
-   // var Tprice = parseInt(aPrice);
-    if (cheap.checked) {
-        document.getElementById("totalAmount").innerHTML = ((cheap * optimusPrice) / 100) + optimusPrice;
-    } else if (normal.checked) {
-        document.getElementById("totalAmount").innerHTML = ((normal * optimusPrice) / 100) + optimusPrice;
-    } else if (expensive.checked) {
-        document.getElementById("totalAmount").innerHTML = ((expensive * optimusPrice) / 100) + optimusPrice;
-    } else {
-        document.getElementById("totalAmount").innerHTML = 'Don\'t forge ';
-    };
-
-
-};-->
-
-<!-- How to display a collapsable item 
-  
-  <div class="container">
-  <h2>Simple Collapsible</h2>
-  <input type="radio" onclick="desplegar()" name="desplegar"> desplegar</input><input type="radio" onclick="desplegar2()"  name="desplegar">desplegar2</input>
-  <div id="demo" class="collapse">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </div>
-   <div id="demo2" class="collapse">
-   asfasfasf
-  </div>
-  
-  
-  
-</div>
-<script>
-function desplegar(){
-$('#demo').collapse('show');
-$('#demo2').collapse('hide');
-}
-function desplegar2(){
-$('#demo').collapse('hide');
-$('#demo2').collapse('show');
-}
-</script>-->

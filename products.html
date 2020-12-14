@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
+  <!--head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,6 +14,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
   </head>
+  <!--body-->
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
@@ -28,12 +30,11 @@
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a id="Item" class="dropdown-item" href="my-profile.html">Usuario</a>
             <a class="dropdown-item" href="cart.html">Mi carrito</a>
-            <a class="dropdown-item" href="#">Cerrar Sesion</a>
+            <a class="dropdown-item" href="login.html">Cerrar Sesion</a>
           </div>
         </div>
       </div>
     </nav>
-    <!--here is where the new code starts ob.2-->
     <main role="main" class="pb-5">
       <div class="text-center p-4">
           <h2>Productos</h2>
@@ -44,10 +45,10 @@
               <div class="col text-right">
                   <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
                       <label class="btn btn-light active" id="sortAsc" >
-                          <input type="radio" name="options" autocomplete="off" checked>Relevancia A-Z
+                          <input type="radio" name="options" autocomplete="off" checked>Filrar por precio
                       </label>
                       <label class="btn btn-light" id="sortDesc" >
-                          <input type="radio" name="options" autocomplete="off"> Relevancia Z-A
+                          <input type="radio" name="options" autocomplete="off"> Filtrar por Cant. de articulos vendidos
                       </label>
                       <label class="btn btn-light" id="sortByCount" >
                           <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Precio.
@@ -85,15 +86,7 @@
       </div>
   </main>
 
-<!--start code--> 
-<!-- Control buttons added on 09/30/2020 for product filtering -->
-
-<!--end code
-    
-<div class="container">
-      <div id="parola" class="container p-5">
-      </div>
-  </div>-->
+<!--Footer-->
     <footer class="text-muted bg-light">
       <div class="container">
         <p class="float-right">

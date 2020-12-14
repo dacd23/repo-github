@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
-
+<!--head-->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,8 +13,9 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
+<!--body-->
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
@@ -30,7 +31,7 @@
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a id="Item" class="dropdown-item" href="my-profile.html">Usuario</a>
           <a class="dropdown-item" href="cart.html">Mi carrito</a>
-          <a class="dropdown-item" href="#">Cerrar Sesion</a>
+          <a class="dropdown-item" href="login.html">Cerrar Sesion</a>
         </div>
       </div>
     </div>
@@ -44,11 +45,7 @@
           seleccionada previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p>
       </div>
       <h3 id="categoryName"></h3>
-      <!--Here I'm attempting to display the related products -->
-      <h2><em>Related Products</em></h2>
       <br>
-      <p id="related">You got this buddy! keep on going</p>
-      <hr class="my-3">
       <dl>
         <dt>Descripción</dt>
         <dd>
@@ -71,8 +68,13 @@
           </div>
         </dd>
       </dl>
+      <br><hr><br>
+            <!--Here I'm attempting to display the related products -->
+            <h3><em>Productos Relacionados</em></h3>
+            <br>
+            <div id="related">related products</div>
       <!--Adding comments on the category-info.html page-->
-      <br><br>
+      <br><hr><br>
       <h3 class="comment">Comentarios</h3><br>
       <section id="Jcomments">hoho</section>
 
@@ -84,7 +86,7 @@
           <input type="text" id="name" value="Name: ">
           <textarea type="text" name="comment" placeholder="Add Your Comment" id="comment" rows="4" cols="50"></textarea>
           <div class="btn">
-            <input type="submit" value="comment">
+            <input type="submit" value="Enviar">
             <button id="btn">Cancel</button>
           </div>
         </form>
@@ -93,6 +95,7 @@
       <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
   </main>
+  <!--footer-->
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -110,6 +113,7 @@
       <div></div>
     </div>
   </div>
+  <!--JavaScript links  -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>

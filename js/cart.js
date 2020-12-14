@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     });
     
 
-    /*attempt to add total count of items inside the cart. Note: you must use onchange.js*/
+/*attempt to add total count of items inside the cart. Note: you must use onchange.js*/
     
 
 function totalPrice() {

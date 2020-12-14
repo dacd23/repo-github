@@ -21,16 +21,16 @@ function sortCategories(criteria, array){
     if (criteria === ORDER_ASC_BY_NAME)
     {
         result = array.sort(function(a, b) {
-            if ( a.name < b.name ){ return -1; }
-            if ( a.name > b.name ){ return 1; }
+            if ( a.cost < b.cost ){ return 1; }
+            if ( a.cost > b.cost ){ return -1; }
             return 0;
         });
     }else if (criteria === ORDER_DESC_BY_NAME){
         result = array.sort(function(a, b) {
-            if ( a.name > b.name ){ return -1; }
-            if ( a.name < b.name ){ return 1; }
+            if ( a.soldCount > b.soldCount ){ return -1; }
+            if ( a.soldCount < b.soldCount ){ return 1; }
             return 0;
-        }); /*Aqui estaba soldcount para filtrar por cantidad y pones productcount*/
+        }); 
     }else if (criteria === ORDER_BY_PROD_COUNT){
         result = array.sort(function(a, b) {
             let aCount = parseInt(a.cost);
@@ -53,7 +53,7 @@ function showCategoriesList(){
 
         if (((minCount == undefined) || (minCount != undefined && parseInt(category.cost) >= minCount)) && //aqui category.cost deberia se productCount
             ((maxCount == undefined) || (maxCount != undefined && parseInt(category.cost) <= maxCount))){
-/*Agregando productos en cuadrilla*/
+/*Adding products with quadrille style*/
 
                 htmlContentToAppend += `
 
@@ -70,24 +70,6 @@ function showCategoriesList(){
 </div>
 
 `
-
-/*            htmlContentToAppend += `
-            <a href="category-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ category.name +`</h4>
-                            <small class="text-muted"> artículos vendidos ` + category.soldCount + ` </small>
-                            <small class="text-muted"> Precio ` + category.cost + ` </small>
-                        </div>
-                        <p class="mb-1">` + category.description + `</p>
-                    </div>
-                </div>
-            </a>
-            `  */
         }
 
         document.getElementById("parola").innerHTML = htmlContentToAppend;
@@ -164,38 +146,3 @@ document.addEventListener("DOMContentLoaded", function(e){
         showCategoriesList();
     });
 });
-
-/*The new code ends here, delete this comment once you are finish.
-
-HERE IS HOW TO FETCH DATA FROM JSON DATA
-var currentProductArray = [];
-
-
-document.getElementById('parola').addEventListener("DOMContentLoaded", showProductsList(currentProductArray));
-
-function showProductsList(currentProductArray) {
-fetch('https://japdevdep.github.io/ecommerce-api/product/all.json')
-.then((res) => res.json())
-.then((data) => {
-    let output = [];
-    data.forEach(function(user){
-        output += 
-        `
-        <ul>
-        <li>Name: ${user.name}        </li>
-        <li>Description: ${user.description}        </li>
-        <li>Currency: ${user.currency}<span>Cost: ${user.cost}</span>        </li>        
-        <li>SoldCount: ${user.soldCount}        </li>
-        </ul>
-        `
-    })
-
-    document.getElementById('parola').innerHTML = output;
-})
-};
-
-
-
-
-*/
-

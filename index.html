@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
+  <!--head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,6 +14,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
   </head>
+  <!--body-->
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
@@ -28,7 +30,7 @@
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a id="Item" class="dropdown-item" href="my-profile.html">Usuario</a>
             <a class="dropdown-item" href="cart.html">Mi carrito</a>
-            <a class="dropdown-item" href="#">Cerrar Sesion</a>
+            <a class="dropdown-item" href="login.html">Cerrar Sesion</a>
           </div>
         </div>
       </div>
@@ -103,6 +105,7 @@
         </div>
       </div>
     </main>
+    <!--footer-->
     <footer class="text-muted">
       <div class="container">
         <p class="float-right">
@@ -112,6 +115,7 @@
         <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
       </div>
     </footer>
+    <!--JavaScript links-->
     <!--Using the input data from the user we assign the name of the user to a new value-->
     <script>document.getElementById("item").innerHTML = localStorage.getItem("userValue");</script>
     <script src="js/jquery-3.4.1.min.js"></script>

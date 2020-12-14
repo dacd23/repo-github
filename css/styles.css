@@ -190,7 +190,7 @@ textarea {
 .comments:hover {
   color: rgba(255, 0, 0, 0.884);
 }
-
+/*
 #name {
   display: flex;
   justify-content: left;
@@ -200,7 +200,7 @@ textarea {
   background-color: black;
   color: white;
   border-bottom: whitesmoke;
-}
+}*/
 
 /*Adding styles to the comments from the JSON*/
 

@@ -34,7 +34,7 @@ function sortCategories(criteria, array){
 
     return result;
 }
-
+//Showing the products from the category list
 function showCategoriesList(){
 
     let htmlContentToAppend = "";
