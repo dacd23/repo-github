@@ -13,49 +13,41 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <style>
-    html, body{
-      height: 100%;
-    }
-
-    body {
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background-color: black;
-    }
-
-
-   
-  </style>
 </head>
 <!--body-->
-<body class="text-center">
-  <div class="container  col-4 flex">
-    <div class="alert-danger" role="alert">
-      <form action="file:///C:/Users/lainz/OneDrive/Documents/jap/repo-github/index.html" method="POST">
-        <div class="imgcontainer col-4 flex">
-          <img style="opacity: 0.8" src="https://avatars1.githubusercontent.com/u/51379106?s=400&u=06cd8ed563c49e984d7b24cf9aad9b68c437ab1c&v=4" alt="Avatar" class="avatar">
+<body class="login-img">
+
+        <div class="flex-container">
+          <form method="POST" action="file:///C:/Users/lainz/OneDrive/Documents/jap/repo-github/index.html">
+            <div class="flex-children">  
+              <label for="userValue"><b>Usuario</b></label>
+            </div>
+            <div class="flex-children">
+              <input type="text" placeholder="Enter Username" name="userValue" id="userValue" required>
+            </div>
+            <div class="flex-children">
+              <label for="psw"><b>Contraseña</b></label>
+            </div>
+            <div class="flex-children">
+              <input type="password" placeholder="Ingrese contraseña" name="psw" id="password" required><br><br>
+            </div>
+            <div class="flex-children">
+              <input type="submit" id="sbmit" value="Ingresar" onclick="displayInfo()">
+            </div>
+            <div class="flex-children">
+              <label>
+              <input type="checkbox" checked="checked" name="remember"> Recordarme
+              </label>
+            </div>
+            <div class="flex-children">
+              <button type="button" class="cancelbtn">Cancelar</button><br>
+            </div>
+            <div class="flex-children">
+              <span class="psw"><a href="#"><strong>Olvido su contraseña?</strong></a></span>
+            </div>
+          </form>
         </div>
-        <div class="container  col-4 flex-align-left">
-          <form method="POST" action="index.html">
-          <label for="userValue"><b>Usuario</b></label>
-          <input type="text" placeholder="Enter Username" name="userValue" id="userValue" required>
-          <label for="psw"><b>Contraseña</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" id="password" required><br><br>
-          <input type="submit" id="sbmit" value="Ingresar" onclick="displayInfo()">
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Recordarme
-          </label>  
-          <button type="button" class="cancelbtn">Cancelar</button><br>
-          <span class="psw"><a href="#">Olvido su contraseña?</a></span>
-        </div>
-        </form>
-      </div>
-    </div>
-  </div>
+
 <!--JavaScript links-->
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>

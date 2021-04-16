@@ -19,7 +19,7 @@
   font-weight: bold;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1046px) {
   .jumbotron {
     padding-top: 6rem;
     padding-bottom: 6rem;
@@ -142,11 +142,30 @@ a.custom-card:hover {
 
 /* Login Styles */
 
-.alert-danger {
-  display: absolute;
-  position: bottom;
-  justify-content: center;  
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+  margin: 10rem auto;
 }
+
+.flex-children {
+  text-align: center;
+  align-self: center;
+}
+
+.login-img {
+  background-image: url('https://entrepreneurhandbook.co.uk/wp-content/uploads/2019/06/eCommerce-shopping-750x420.jpg');
+  background-position: center center;
+  background-image: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color:rgba(255, 255, 255, 0.5);
+}
+
 
 /*Adding styles to the product list -09/30/2020-*/
 
@@ -243,23 +262,6 @@ textarea {
   color: white;
   margin: 4px 10px;
   padding: 4px 10px;
-}
-
-.proceedToCheckout {
-  display: flex;
-  position: center;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-  color: white;
-  margin: 10px 100px;
-  padding: 10px 50px;
-  border: 1px solid yellow;
-}
-
-.button-confirm-payment {
-  padding-left: 10px;
-  margin-left: 50px;
 }
 
 .address {
